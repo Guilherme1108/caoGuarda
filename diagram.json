@@ -1,0 +1,66 @@
+{
+    "version": 1,
+    "author": "Guilherme Moreira de Souza",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-breadboard-half", "id": "bb1", "top": -3, "left": 175.6, "attrs": {} },
+      {
+        "type": "board-esp32-devkit-c-v4",
+        "id": "esp",
+        "top": -193.66,
+        "left": 70.9,
+        "rotate": 90,
+        "attrs": {}
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 81.6,
+        "left": 277.85,
+        "rotate": 90,
+        "attrs": { "value": "1000" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": 124,
+        "left": 270.2,
+        "rotate": 270,
+        "attrs": { "color": "green" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led2",
+        "top": 124,
+        "left": 327.8,
+        "rotate": 270,
+        "attrs": { "color": "red" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r2",
+        "top": 81.6,
+        "left": 335.45,
+        "rotate": 90,
+        "attrs": { "value": "1000" }
+      }
+    ],
+    "connections": [
+      [ "esp:TX", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX", "$serialMonitor:TX", "", [] ],
+      [ "esp:GND.2", "bb1:bn.1", "black", [ "v28.8", "h-48", "v211.2" ] ],
+      [ "esp:19", "bb1:18t.a", "red", [ "v19.2", "h230.4" ] ],
+      [ "esp:18", "bb1:12t.a", "purple", [ "v9.6", "h182.4" ] ],
+      [ "led1:C", "bb1:bn.10", "green", [ "h0" ] ],
+      [ "led1:A", "bb1:12b.i", "", [ "$bb" ] ],
+      [ "led1:C", "bb1:12b.j", "", [ "$bb" ] ],
+      [ "led2:A", "bb1:18b.i", "", [ "$bb" ] ],
+      [ "led2:C", "bb1:18b.j", "", [ "$bb" ] ],
+      [ "led2:C", "bb1:bn.15", "green", [ "h0" ] ],
+      [ "r1:1", "bb1:12t.b", "", [ "$bb" ] ],
+      [ "r1:2", "bb1:12b.f", "", [ "$bb" ] ],
+      [ "r2:1", "bb1:18t.b", "", [ "$bb" ] ],
+      [ "r2:2", "bb1:18b.f", "", [ "$bb" ] ]
+    ],
+    "dependencies": {}
+  }
